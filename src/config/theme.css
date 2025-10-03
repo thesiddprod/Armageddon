@@ -1,0 +1,241 @@
+/* ========================================
+   🎨 ARMAGEDDON - FICHIER DE PERSONNALISATION
+   ========================================
+   
+   Ce fichier contient TOUTES les variables de design.
+   Modifiez uniquement les valeurs ici pour changer 
+   l'apparence de tout le site !
+   
+   ⚠️  Ne touchez PAS aux noms des variables (--color-primary)
+   ✅  Changez SEULEMENT les valeurs (#3245ff)
+   
+   💡 Les variantes light/dark se génèrent automatiquement
+   💡 Utilisez les presets salon en bas pour aller plus vite
+*/
+
+:root {
+  /* ==========================================
+     🎨 COULEURS PRINCIPALES - Votre Identité
+     ========================================== */
+  
+  --color-primary: #D34F73;
+  /* 👆 BOUTONS PRIMAIRES, LIENS IMPORTANTS, FOCUS des inputs */
+  --color-primary-hsl: 340 59% 57%;
+  /* 👆 Version HSL pour Shadcn (même couleur) - MODIFIEZ LES DEUX ! */
+  --color-primary-light: color-mix(in srgb, var(--color-primary) 80%, white);
+  --color-primary-dark: color-mix(in srgb, var(--color-primary) 80%, black);
+  
+  --color-secondary: #bc52ee;
+  /* 👆 HOVERS, ÉTATS ACTIFS, ÉLÉMENTS DÉCORATIFS (PAS les fonds !) */
+  --color-secondary-hsl: 270 84% 63%;
+  /* 👆 Version HSL pour Shadcn */
+  --color-secondary-light: color-mix(in srgb, var(--color-secondary) 80%, white);
+  --color-secondary-dark: color-mix(in srgb, var(--color-secondary) 80%, black);
+  
+  --color-accent: #f041ff;
+  /* 👆 CTA TRÈS IMPORTANTS, NOTIFICATIONS, BADGES */
+  --color-accent-hsl: 295 100% 63%;
+  /* 👆 Version HSL pour Shadcn */
+  --color-accent-light: color-mix(in srgb, var(--color-accent) 80%, white);
+  --color-accent-dark: color-mix(in srgb, var(--color-accent) 80%, black);
+
+  /* ==========================================
+     🚨 COULEURS D'ÉTAT - Messages & Alertes
+     ========================================== */
+  --color-success: #10b981;  /* Succès, validation */
+  --color-success-hsl: 142 71% 45%;
+  --color-danger: #ef4444;   /* Erreurs, suppression */
+  --color-danger-hsl: 0 84% 60%;
+  --color-warning: #f59e0b;  /* Avertissements, attention */
+  --color-warning-hsl: 38 92% 50%;
+  --color-info: #3b82f6;     /* Informations, aide */
+  --color-info-hsl: 221 83% 53%;
+
+  /* ==========================================
+     🎨 PALETTE NEUTRE - Noirs, Blancs, Gris
+     ========================================== */
+
+  /* Couleurs de base */
+  --color-white: #fefefe;    /* Blanc crème doux (plus chaleureux que #fff) */
+  --color-black: #1a1a1a;    /* Noir doux (plus chaleureux que #000) */
+  --color-gray: #6b7280;     /* Gris neutre pour textes secondaires */
+
+  /* Nuances de noir (du plus clair au plus foncé) */
+  --color-black-light: color-mix(in srgb, var(--color-black) 40%, var(--color-white));    /* Gris clair pour textes discrets */
+  --color-black-medium: color-mix(in srgb, var(--color-black) 70%, var(--color-white));   /* Gris moyen pour sous-titres */
+  --color-black-soft: color-mix(in srgb, var(--color-black) 85%, var(--color-white));     /* Noir très doux pour bordures */
+
+  /* Nuances de blanc */
+  --color-white-soft: color-mix(in srgb, var(--color-white) 95%, var(--color-black));     /* Blanc cassé pour cartes */
+  --color-white-warm: color-mix(in srgb, var(--color-white) 98%, var(--color-warning));   /* Blanc chaud */
+  --color-white-cool: color-mix(in srgb, var(--color-white) 98%, var(--color-primary));   /* Blanc froid */
+  
+  /* ==========================================
+     🎨 VARIABLES SHADCN - Fonds & Éléments Neutres
+     ========================================== */
+  
+  /* Fonds pour boutons secondaires (gris, pas vos couleurs !) */
+  --shadcn-secondary-bg: color-mix(in srgb, var(--color-white) 94%, var(--color-black));
+  --shadcn-secondary-hover: color-mix(in srgb, var(--color-white) 88%, var(--color-black));
+  
+  /* Fonds pour éléments "muted" (très discrets) */
+  --shadcn-muted-bg: color-mix(in srgb, var(--color-white) 97%, var(--color-black));
+  --shadcn-muted-text: color-mix(in srgb, var(--color-white) 45%, var(--color-black));
+  
+  /* Bordures et inputs (subtiles) */
+  --shadcn-border: color-mix(in srgb, var(--color-white) 88%, var(--color-black));
+  --shadcn-input-bg: color-mix(in srgb, var(--color-white) 88%, var(--color-black));
+  
+  /* Fonds d'accent (version très subtile de votre accent) */
+  --shadcn-accent-bg: color-mix(in srgb, var(--color-accent) 8%, var(--color-white));
+  
+  /* Variables neutres pour gradations */
+  --color-neutral-50: color-mix(in srgb, var(--color-white) 98%, var(--color-black));
+  --color-neutral-100: color-mix(in srgb, var(--color-white) 95%, var(--color-black));
+  --color-neutral-200: color-mix(in srgb, var(--color-white) 90%, var(--color-black));
+  --color-neutral-300: color-mix(in srgb, var(--color-white) 80%, var(--color-black));
+  --color-neutral-400: color-mix(in srgb, var(--color-white) 60%, var(--color-black));
+  --color-neutral-500: color-mix(in srgb, var(--color-white) 40%, var(--color-black));
+
+  /* ==========================================
+     📝 COULEURS DE TEXTE - Usage Concret
+     ========================================== */
+
+  /* Textes sur fond clair (pages normales) */
+  --text-primary: var(--color-black);              /* Titres principaux, texte important */
+  --text-secondary: var(--color-black-medium);     /* Sous-titres, descriptions */
+  --text-muted: var(--color-black-light);          /* Textes discrets, métadonnées */
+  --text-link: var(--color-primary);               /* Liens normaux */
+  --text-link-hover: var(--color-secondary);       /* Liens au survol */
+
+  /* Textes sur fond sombre (header, footer) */
+  --text-on-dark: var(--color-white);              /* Titres sur fond sombre */
+  --text-on-dark-secondary: var(--color-white-soft); /* Sous-titres sur fond sombre */
+  --text-on-dark-muted: color-mix(in srgb, var(--color-white) 70%, transparent); /* Textes discrets sur fond sombre */
+  --text-on-dark-link: var(--color-white);         /* Liens sur fond sombre */
+  --text-on-dark-link-hover: var(--color-white);   /* Liens sur fond sombre au survol */
+
+  /* ==========================================
+     🏠 ARRIÈRE-PLANS - Fonds de Page et Éléments
+     ========================================== */
+
+  /* Fonds principaux */
+  --bg-card: var(--color-white-soft);              /* Fond des cartes, sections */
+  --bg-header: var(--color-primary);               /* Fond du header (couleur de marque) */
+  --bg-footer: var(--color-black);                 /* Fond du footer */
+
+  /* Teintes blanches inspirées des couleurs (UX: "tints") */
+  /* Utilisation: sections sur fond clair mais teintées de votre couleur (hero, bandeaux, encarts) */
+  --bg-primary: color-mix(in srgb, var(--color-primary) 3%, var(--color-white));      /* Blanc teinté primaire */
+  --bg-secondary: color-mix(in srgb, var(--color-secondary) 3%, var(--color-white));  /* Blanc teinté secondaire */
+  --bg-accent: color-mix(in srgb, var(--color-accent) 3%, var(--color-white));        /* Blanc teinté accent */
+
+  /* Fonds d'état */
+  --bg-success: color-mix(in srgb, var(--color-success) 10%, var(--color-white));
+  --bg-danger: color-mix(in srgb, var(--color-danger) 10%, var(--color-white));
+  --bg-warning: color-mix(in srgb, var(--color-warning) 10%, var(--color-white));
+
+  /* ==========================================
+     🏷️ LOGO - Tailles Responsives
+     ========================================== */
+  
+  --logo-size: 180px;
+  /* 👆 Taille du logo sur desktop
+     ⚠️ ATTENTION : Ne pas dépasser 300px pour éviter les problèmes sur mobile */
+  
+  --logo-size-mobile: calc(var(--logo-size) * 0.83);
+  /* 👆 Taille du logo sur mobile (calculée automatiquement) */
+
+  /* ==========================================
+     ✏️ TYPOGRAPHIE - Tailles de Texte
+     ========================================== */
+  
+  /* ⚠️ POLICES GÉRÉES PAR config.js
+     Les variables CSS --font-brand, --font-heading, --font-body, --font-mono
+     sont automatiquement générées depuis config.js dans le Layout.
+     
+     Pour modifier les polices : 
+     👉 Éditez src/config/config.js > design.fonts.definitions
+  */
+
+  /* Textes courants */
+  --text-xs: 12px;    /* Très petit (copyright, métadonnées) */
+  --text-sm: 14px;    /* Petit (sous-textes, légendes) */
+  --text-base: 16px;  /* Normal (paragraphes, texte principal) */
+  --text-lg: 18px;    /* Grand (sous-titres) */
+  --text-xl: 20px;    /* Très grand (titres de section) */
+  --text-2xl: 24px;   /* Encore plus grand */
+
+  /* Titres (hiérarchie claire) */
+  --text-h1: 48px;    /* Titre principal de page */
+  --text-h2: 36px;    /* Titres de section importante */
+  --text-h3: 28px;    /* Sous-titres de section */
+  --text-h4: 24px;    /* Titres de sous-section */
+  --text-h5: 20px;    /* Petits titres */
+  --text-h6: 18px;    /* Très petits titres */
+
+  /* Textes spéciaux */
+  --text-hero: 64px;      /* Titre héro (page d'accueil) */
+  --text-display: 72px;   /* Titre d'affichage (très grand) */
+
+  /* ==========================================
+     📐 ESPACEMENTS - Système Automatique
+     ========================================== */
+
+  /* Espacement de base (modifiez cette valeur pour tout ajuster) */
+  --space-base: 16px;
+
+  /* Espacements calculés automatiquement */
+  --space-xs: calc(var(--space-base) * 0.5);    /* 8px - Très petit */
+  --space-sm: var(--space-base);                /* 16px - Petit */
+  --space-md: calc(var(--space-base) * 1.5);    /* 24px - Moyen */
+  --space-lg: calc(var(--space-base) * 3);      /* 48px - Grand */
+  --space-xl: calc(var(--space-base) * 4);      /* 64px - Très grand */
+
+  /* ==========================================
+     📱 LARGEURS - Responsive Design
+     ========================================== */
+
+  --width-mobile: 480px;     /* Largeur mobile */
+  --width-tablet: 768px;     /* Largeur tablette */
+  --width-desktop: 1200px;   /* Largeur desktop */
+  --width-full: 100%;        /* Largeur complète */
+
+  /* ==========================================
+     🎭 EFFETS VISUELS
+     ========================================== */
+
+  /* Ombres graduées */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.2);
+
+  /* Bordures arrondies */
+  --radius-sm: 5px;     /* Petit arrondi */
+  --radius-md: 9px;     /* Arrondi moyen */
+  --radius-lg: 13px;    /* Grand arrondi */
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;      /* Transition rapide */
+  --transition-normal: 0.3s ease;     /* Transition normale */
+
+
+  /* ==========================================
+     🏛️ ARCHÉTYPES SALON - Presets Rapides
+     ========================================== */
+  
+  /* Décommente un archétype pour l'appliquer :
+  
+  SALON LUXE :
+  --color-primary: #d4af37;
+  --color-secondary: #1a1a1a;
+  
+  BARBERSHOP :
+  --color-primary: #dc2626;
+  --color-secondary: #1a1a1a;
+  
+  SPA NATURE :
+  --color-primary: #10b981;
+  --color-secondary: #065f46;
+  */
+}
