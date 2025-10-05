@@ -18,9 +18,9 @@
      🎨 COULEURS PRINCIPALES - Votre Identité
      ========================================== */
   
-  --color-primary: #D34F73;
+  --color-primary: #085634; /*#D34F73 */
   /* 👆 BOUTONS PRIMAIRES, LIENS IMPORTANTS, FOCUS des inputs */
-  --color-primary-hsl: 340 59% 57%;
+  --color-primary-hsl: 154 83% 18%;
   /* 👆 Version HSL pour Shadcn (même couleur) - MODIFIEZ LES DEUX ! */
   --color-primary-light: color-mix(in srgb, var(--color-primary) 80%, white);
   --color-primary-dark: color-mix(in srgb, var(--color-primary) 80%, black);
@@ -32,9 +32,9 @@
   --color-secondary-light: color-mix(in srgb, var(--color-secondary) 80%, white);
   --color-secondary-dark: color-mix(in srgb, var(--color-secondary) 80%, black);
   
-  --color-accent: #f041ff;
+  --color-accent: 229 86% 14%;
   /* 👆 CTA TRÈS IMPORTANTS, NOTIFICATIONS, BADGES */
-  --color-accent-hsl: 295 100% 63%;
+  --color-accent-hsl: 229 86% 14%;
   /* 👆 Version HSL pour Shadcn */
   --color-accent-light: color-mix(in srgb, var(--color-accent) 80%, white);
   --color-accent-dark: color-mix(in srgb, var(--color-accent) 80%, black);

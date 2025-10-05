@@ -24,9 +24,9 @@
     --secondary: var(--color-secondary-hsl);
     --secondary-foreground: 0 0% 99%;
     
-    /* ACCENT = Version subtile de votre accent */
-    --accent: 295 100% 97%;
-    --accent-foreground: 295 100% 63%;
+    /* ACCENT = Couleur d'accent du thème */
+    --accent: var(--color-accent-hsl);
+    --accent-foreground: 0 0% 99%;
     
     /* Éléments discrets */
     --muted: 0 0% 97%;
@@ -79,8 +79,8 @@
     --secondary-foreground: 0 0% 99%;
     
     /* Accent mode sombre */
-    --accent: 0 0% 20%;
-    --accent-foreground: 295 100% 63%;
+    --accent: var(--color-accent-hsl);
+    --accent-foreground: 0 0% 99%;
     
     /* Muted mode sombre */
     --muted: 0 0% 20%;
@@ -135,5 +135,15 @@
   /* Spécifiquement pour les sliders Shadcn */
   [data-orientation="horizontal"][role="slider"] {
     background-color: hsl(var(--muted)) !important;
+  }
+
+  /* Boutons outline/ghost: hover = accent translucide depuis theme.css */
+  [data-variant="outline"]:hover {
+    background-color: hsl(var(--color-primary-hsl) / 0.20) !important;
+    color: hsl(var(--accent-foreground)) !important;
+  }
+  [data-variant="ghost"]:hover {
+    background-color: hsl(var(--color-accent-hsl) / 0.15) !important;
+    color: hsl(var(--accent-foreground)) !important;
   }
 }
