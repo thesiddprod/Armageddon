@@ -37,7 +37,7 @@ export const config = {
       url: "#accueil" 
     },
     {
-      title: "Servicesx",
+      title: "Servicesxyy",
       url: "#services",
       megaMenu: {
         linkGroups: [
