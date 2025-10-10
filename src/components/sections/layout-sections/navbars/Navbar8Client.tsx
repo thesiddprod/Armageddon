@@ -97,11 +97,16 @@ export const Navbar8Client = ({ logo, navLinks, buttons }: Navbar8ClientProps) =
 
       {/* Mobile Menu */}
       <div
-        className={`absolute left-0 right-0 top-full w-full overflow-hidden transition-all duration-300 lg:hidden ${
-          isMobileMenuOpen ? "max-h-[100dvh] opacity-100" : "max-h-0 opacity-0"
+        className={`absolute left-0 right-0 top-full w-full overflow-y-auto overscroll-contain transition-all duration-300 lg:hidden scrollbar-hide ${
+          isMobileMenuOpen ? "max-h-[calc(100dvh-4rem)] opacity-100" : "max-h-0 opacity-0"
         }`}
+        style={{ 
+          WebkitOverflowScrolling: 'touch',
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none'
+        }}
       >
-        <div className="block h-auto overflow-auto border-b border-border bg-background px-[5%] pb-8 pt-4">
+        <div className="block min-h-full border-b border-border bg-background px-[5%] pb-8 pt-4">
           <div className="flex flex-col">
             {navLinks.map((navLink, index) =>
               navLink.megaMenu ? (
