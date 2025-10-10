@@ -1,189 +1,99 @@
 // ========================================
-// 🏛️ ARMAGEDDON - CONFIGURATION COMPLÈTE
+// 🏛️ CONFIGURATION CLIENT / ENTREPRISE
+// Multi-sites et services
 // ========================================
-// 
-// BASE DE DONNÉES DU SITE
-// Contient TOUTES les vraies données : business + contenu
-// Un seul import pour tout le site !
 
 export const config = {
-  // ==========================================
-  // 🏢 INFORMATIONS GÉNÉRALES
-  // ==========================================
-  business: {
-    name: "Armageddon",
-    tagline: "We're never going out of style.",
-    description: "Découvrez l'excellence de nos services de coiffure et esthétique dans un cadre moderne et relaxant. Notre équipe d'experts vous accompagne pour sublimer votre style unique.",
-    foundedYear: 2010,
-    slogan: "Excellence, créativité et bien-être au cœur de nos services.",
-    logo: "",
-    // Variations de logo (centralisées, data-only)
+  name: "Nom de l'entreprise",
+  description: "Description courte ou longue de l'entreprise.",
+  slogan: "Phrase marketing ou slogan",
+  branding: {
     logos: {
-      base: {
-        horizontal: "base/armageddon-logo.png",
-        square: ""
-      },
-      monochrome: {
-        horizontal: "monochrome/armageddon-logo.png",
-        square: ""
-      },
-      light: {
-        horizontal: "light/armageddon-logo.png",
-        square: ""
-      },
-      favicon: "logos/favicon/favicon.ico"
+      base: { horizontal: "armageddon-logo.png", square: "" },
+      monochrome: { horizontal: "armageddon-logo.png", square: "" },
+      light: { horizontal: "", square: "" },
+      favicon: "favicon.svg",
+      dimensions: {
+        width: "180", // Largeur en pixels
+        height: "auto", // Hauteur automatique pour garder le ratio
+        className: "h-8 w-auto" // Ou utilise des classes Tailwind (h-8 = 32px, h-10 = 40px, h-12 = 48px)
+      }
     }
   },
 
-  // ==========================================
-  // 📍 COORDONNÉES & CONTACT
-  // ==========================================
-  contact: {
-    address: {
-      street: "123 Rue de la Beauté",
-      city: "Paris",
-      postalCode: "75001",
-      country: "France",
-      full: "123 Rue de la Beauté, 75001 Paris"
-    },
-    phone: "01 23 45 67 89",
-    email: "contact@salon-elegance.fr",
-    website: "www.salon-elegance.fr"
-  },
-
-  // ==========================================
-  // 🕒 HORAIRES D'OUVERTURE
-  // ==========================================
-  hours: {
-    monday: { open: "09:00", close: "19:00", closed: false },
-    tuesday: { open: "09:00", close: "19:00", closed: false },
-    wednesday: { open: "09:00", close: "19:00", closed: false },
-    thursday: { open: "09:00", close: "19:00", closed: false },
-    friday: { open: "09:00", close: "19:00", closed: false },
-    saturday: { open: "09:00", close: "18:00", closed: false },
-    sunday: { open: null, close: null, closed: true },
-    
-    // Format d'affichage
-    display: {
-      weekdays: "Lun - Ven: 9h - 19h",
-      saturday: "Samedi: 9h - 18h",
-      sunday: "Dimanche: Fermé"
-    }
-  },
-
-  // ==========================================
-  // 💼 SERVICES & TARIFS
-  // ==========================================
-  services: [
-    {
-      category: "Coiffure Classique",
-      icon: "✂️",
-      description: "Coupes et coiffages pour tous",
-      items: [
-        { name: "Coupe Femme", price: 55 },
-        { name: "Coupe Homme", price: 35 },
-        { name: "Coupe Enfant", price: 25 },
-        { name: "Brushing", price: 30 }
-      ]
-    },
-    {
-      category: "Coloration & Soins",
-      icon: "🎨", 
-      description: "Couleurs et traitements capillaires",
-      items: [
-        { name: "Coloration", price: 75 },
-        { name: "Mèches", price: 95 },
-        { name: "Balayage", price: 110 },
-        { name: "Soin capillaire", price: 35 }
-      ]
-    },
-    {
-      category: "Esthétique & Beauté",
-      icon: "💅",
-      description: "Soins du visage et beauté", 
-      items: [
-        { name: "Soin du visage", price: 65 },
-        { name: "Manucure", price: 35 },
-        { name: "Pédicure", price: 45 },
-        { name: "Épilation sourcils", price: 20 }
-      ]
-    },
-    {
-      category: "Forfaits Détente",
-      icon: "🌸",
-      description: "Packages bien-être complets",
-      items: [
-        { name: "Forfait Beauté", price: 120 },
-        { name: "Forfait Mariée", price: 180 },
-        { name: "Forfait Détente", price: 95 },
-        { name: "Forfait Découverte", price: 75 }
-      ]
-    }
-  ],
-
-  // ==========================================
-  // 👥 ÉQUIPE
-  // ==========================================
-  team: [
-    {
-      name: "Sophie Martin",
-      role: "Directrice & Coiffeuse",
-      specialties: ["Coupe", "Coloration", "Balayage"],
-      experience: "15 ans"
-    },
-    {
-      name: "Julie Dubois",
-      role: "Esthéticienne",
-      specialties: ["Soins du visage", "Manucure", "Extension cils"],
-      experience: "8 ans"
-    },
-    {
-      name: "Marie Leroy",
-      role: "Masseuse",
-      specialties: ["Massage relaxant", "Réflexologie", "Pierres chaudes"],
-      experience: "12 ans"
-    }
-  ],
-
-  // ==========================================
-  // 🌐 RÉSEAUX SOCIAUX
-  // ==========================================
+  // 🌐 Réseaux sociaux
   social: {
-    facebook: "https://facebook.com/salon-elegance",
-    instagram: "https://instagram.com/salon_elegance",
-    tiktok: "https://tiktok.com/@salon.elegance",
-    google: "https://g.page/salon-elegance",
-    x: "https://x.com/salon-elegance",
+    facebook: "",
+    instagram: "",
+    tiktok: "",
+    linkedin: "",
+    x: ""
   },
 
-  // ==========================================
-  // 🧭 NAVIGATION - Liens du site
-  // ==========================================
+  // 🧭 Navigation / CTA
   navigation: [
-    { label: "Accueil", href: "#accueil" },
-    { label: "Services", href: "#services" },
-    { label: "Équipe", href: "#equipe" },
-    { label: "Contact", href: "#contact" }
+    { 
+      title: "Accueil", 
+      url: "#accueil" 
+    },
+    {
+      title: "Services",
+      url: "#services",
+      megaMenu: {
+        linkGroups: [
+          {
+            title: "Électricité",
+            subMenuLinks: [
+              { title: "Installation complète", url: "#installation", description: "Installation électrique complète", image: { src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ctext x='0' y='20' font-size='20'%3E💡%3C/text%3E%3C/svg%3E", alt: "Installation complète" } },
+              { title: "Réparation panne", url: "#reparation", description: "Diagnostic et réparation rapide", image: { src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ctext x='0' y='20' font-size='20'%3E🔌%3C/text%3E%3C/svg%3E", alt: "Réparation panne" } }
+            ]
+          },
+          {
+            title: "Plomberie",
+            subMenuLinks: [
+              { title: "Réparation fuite", url: "#fuite", description: "Intervention rapide sur fuites", image: { src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ctext x='0' y='20' font-size='20'%3E🚰%3C/text%3E%3C/svg%3E", alt: "Réparation fuite" } },
+              { title: "Installation sanitaire", url: "#sanitaire", description: "Installation de sanitaires", image: { src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ctext x='0' y='20' font-size='20'%3E🛁%3C/text%3E%3C/svg%3E", alt: "Installation sanitaire" } }
+            ]
+          }
+        ],
+        /* rightLinkGroup: {
+          title: "Ressources",
+          subMenuLinks: [
+            { title: "Blog", url: "" },
+            { title: "", url: "" }
+          ]
+        } */
+      }
+    },
+    { title: "Équipe", url: "#equipe" },
+    { title: "Contact", url: "#contact" }
   ],
+  
+  cta: [
+    { 
+      title: "Réserver", 
+      variant: "default", // default, secondary, outline, ghost, link, destructive
+      size: "sm" // default, sm, lg, icon
+    }
+    // Ajouter d'autres boutons CTA ici si nécessaire
+    // { title: "Contactez-nous", variant: "outline", size: "sm" }
+  ],
+  
 
-  // ==========================================
-  // 🦶 FOOTER - Contenu des liens
-  // ==========================================
+  // 🦶 Footer
   footer: {
-    description: "", // Si vide, utilise business.description
-    
-    // Sections de liens
+    description: "Texte descriptif du footer ou description générale",
     sections: [
       {
         title: "Services",
         links: [
-          { label: "Coiffure", href: "#coiffure" },
-          { label: "Coloration", href: "#coloration" },
-          { label: "Soins", href: "#soins" }
+          { label: "Service 1", href: "#service1" },
+          { label: "Service 2", href: "#service2" },
+          { label: "Service 3", href: "#service3" }
         ]
       },
       {
-        title: "Salon",
+        title: "Entreprise",
         links: [
           { label: "À propos", href: "#about" },
           { label: "Équipe", href: "#equipe" },
@@ -191,7 +101,6 @@ export const config = {
         ]
       }
     ],
-    // Mentions légales
     legal: [
       { label: "Mentions légales", href: "#mentions" },
       { label: "Confidentialité", href: "#confidentialite" },
@@ -199,102 +108,178 @@ export const config = {
     ]
   },
 
-  // ==========================================
-  // 🤖 CALL-TO-ACTION
-  // ==========================================
-  cta: {
-    text: "Réserver",
-    href: "#reservation"
-  },
-
-  // ==========================================
-  // 🎨 DESIGN TECHNIQUE - Polices uniquement
-  // ==========================================
-  // (Séparé car ne peut pas être importé dans theme.css)
+  // 🎨 Design technique (polices)
   design: {
     fonts: {
-      // Définitions des polices par rôle (source unique de vérité)
       definitions: {
         brand: {
-          // Utilisée pour le logo/branding uniquement
           name: "Libre Baskerville",
           fallback: "serif",
           cssVar: "--font-brand",
           googleUrl: "https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
         },
         heading: {
-          // Titres H1/H2/H3 etc.
-          name: "Inter", 
+          name: "Inter",
           fallback: "sans-serif",
           cssVar: "--font-heading",
           googleUrl: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
         },
         body: {
-          // Texte courant / paragraphes / boutons
           name: "Libre Baskerville",
           fallback: "serif",
           cssVar: "--font-body",
           googleUrl: "https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
         },
         mono: {
-          // Code / chiffres / UI techniques
           name: "Fira Code",
-          fallback: "monospace", 
+          fallback: "monospace",
           cssVar: "--font-mono",
           googleUrl: "https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap"
         }
-      },
-      
-      // Fonctions utilitaires
-      getGoogleFontsUrls() {
-        return Object.values(this.definitions).map(font => font.googleUrl);
-      },
-      
-      getCSSVariables() {
-        const vars = {};
-        Object.entries(this.definitions).forEach(([key, font]) => {
-          vars[font.cssVar] = `'${font.name}', ${font.fallback}`;
-        });
-        return vars;
-      },
-      
-      getInlineRootVars() {
-        return Object.values(this.definitions)
-          .map(font => `${font.cssVar}: '${font.name}', ${font.fallback};`)
-          .join(' ');
-      },
-      
-      getFontFamily(type = 'body') {
-        const font = this.definitions[type];
-        return font ? `'${font.name}', ${font.fallback}` : 'sans-serif';
       }
     }
-  }
-};
+  },
 
-/* ==========================================
-   🤖 PROMPT IA - FORMATAGE SERVICES
-   ==========================================
-   
-   Pour formater automatiquement votre carte de services :
-   
-   "Transforme cette carte de services en format JavaScript pour Armageddon.
-   Structure requise :
-   
-   services: [
-     {
-       category: "Nom de la catégorie",
-       icon: "emoji-approprié",
-       description: "Description courte",
-       items: [
-         { name: "Nom du service", price: prix_en_euros }
-       ]
-     }
-   ]
-   
-   Voici ma carte de services :
-   [COLLER VOTRE CARTE ICI]
-   
-   Respecte bien la structure et utilise des emojis appropriés."
-   
-   ========================================== */
+  // 🏬 Locations / sites
+  locations: [
+    // ---------- LOCATION 1 ----------
+    {
+      id: "location-1",
+      name: "Atelier / Bureau Principal",
+      contact: {
+        address: {
+          street: "123 Rue du Service",
+          city: "Paris",
+          postalCode: "75001",
+          country: "France",
+          full: "123 Rue du Service, 75001 Paris"
+        },
+        phone: "01 23 45 67 89",
+        email: "paris@entreprise.fr",
+        website: "www.entreprise-paris.fr"
+      },
+      access: {
+        publicTransport: { metro: ["Ligne 1 - Station Centrale"], bus: ["21 - Arrêt Service"], tram: [] },
+        parking: ["Parking Service Center, 200m du site"],
+        bike: ["Vélib station 15"]
+      },
+      hours: {
+        monday: { open: "09:00", close: "18:00", closed: false },
+        tuesday: { open: "09:00", close: "18:00", closed: false },
+        wednesday: { open: "09:00", close: "18:00", closed: false },
+        thursday: { open: "09:00", close: "18:00", closed: false },
+        friday: { open: "09:00", close: "18:00", closed: false },
+        saturday: { open: "10:00", close: "14:00", closed: false },
+        sunday: { open: null, close: null, closed: true },
+        display: { weekdays: "Lun - Ven: 9h - 18h", saturday: "Samedi: 10h - 14h", sunday: "Dimanche: Fermé" }
+      },
+      services: [
+        {
+          category: "Électricité",
+          icon: "💡",
+          description: "Installation et réparation électrique",
+          items: [
+            { name: "Installation complète", price: 150 },
+            { name: "Réparation panne électrique", price: 80 },
+            { name: "Mise aux normes", price: 200 }
+          ]
+        },
+        {
+          category: "Plomberie",
+          icon: "🚰",
+          description: "Travaux de plomberie et dépannage",
+          items: [
+            { name: "Installation robinetterie", price: 70 },
+            { name: "Réparation fuite", price: 60 },
+            { name: "Remplacement chauffe-eau", price: 250 }
+          ]
+        },
+        {
+          category: "Maintenance",
+          icon: "🔧",
+          description: "Contrats et interventions régulières",
+          items: [
+            { name: "Contrat annuel entretien", price: 300 },
+            { name: "Intervention ponctuelle", price: 90 },
+            { name: "Audit sécurité", price: 120 }
+          ]
+        }
+      ],
+      team: [
+        {
+          name: "Jean Dupont",
+          role: "Électricien principal",
+          specialties: ["Installation", "Réparation", "Mise aux normes"],
+          experience: "12 ans",
+          image: "team/jean.png",
+          social: { instagram: "", x: "" }
+        },
+        {
+          name: "Lucie Martin",
+          role: "Plombière",
+          specialties: ["Réparation fuite", "Installation sanitaire"],
+          experience: "8 ans",
+          image: "team/lucie.png",
+          social: { instagram: "" }
+        }
+      ],
+      images: ["locations/paris-1-1.jpg", "locations/paris-1-2.jpg"]
+    },
+
+    // ---------- LOCATION 2 ----------
+    {
+      id: "location-2",
+      name: "Agence Secondaire",
+      contact: {
+        address: { street: "45 Avenue du Service", city: "Lyon", postalCode: "69002", country: "France", full: "45 Avenue du Service, 69002 Lyon" },
+        phone: "04 12 34 56 78",
+        email: "lyon@entreprise.fr",
+        website: "www.entreprise-lyon.fr"
+      },
+      access: { publicTransport: { metro: ["Ligne A - Station Bellecour"], bus: ["C1 - Arrêt Bellecour"], tram: ["T1 - Arrêt Bellecour"] }, parking: ["Parking Bellecour, 150m"], bike: ["Vélo’v station 7"] },
+      hours: {
+        monday: { open: "10:00", close: "19:00", closed: false },
+        tuesday: { open: "10:00", close: "19:00", closed: false },
+        wednesday: { open: "10:00", close: "19:00", closed: false },
+        thursday: { open: "10:00", close: "19:00", closed: false },
+        friday: { open: "10:00", close: "19:00", closed: false },
+        saturday: { open: "09:00", close: "15:00", closed: false },
+        sunday: { open: null, close: null, closed: true },
+        display: { weekdays: "Lun - Ven: 10h - 19h", saturday: "Samedi: 9h - 15h", sunday: "Dimanche: Fermé" }
+      },
+      services: [
+        {
+          category: "Électricité",
+          icon: "💡",
+          description: "Installation et dépannage",
+          items: [
+            { name: "Remplacement tableau électrique", price: 180 },
+            { name: "Installation luminaire", price: 50 },
+            { name: "Dépannage urgence", price: 100 }
+          ]
+        },
+        {
+          category: "Plomberie",
+          icon: "🚰",
+          description: "Travaux et réparation",
+          items: [
+            { name: "Débouchage canalisation", price: 80 },
+            { name: "Réparation fuite", price: 70 },
+            { name: "Installation chauffe-eau", price: 220 }
+          ]
+        }
+      ],
+      team: [
+        {
+          name: "Pierre Leblanc",
+          role: "Technicien polyvalent",
+          specialties: ["Électricité", "Plomberie", "Maintenance"],
+          experience: "10 ans",
+          image: "team/pierre.png",
+          social: { instagram: "", x: "" }
+        }
+      ],
+      images: ["locations/lyon-1-1.jpg", "locations/lyon-1-2.jpg"]
+    }
+  ]
+};

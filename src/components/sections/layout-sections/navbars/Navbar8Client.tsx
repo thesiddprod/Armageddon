@@ -8,6 +8,9 @@ type ImageProps = {
   url?: string
   src: string
   alt?: string
+  width?: string
+  height?: string
+  className?: string
 }
 
 type SubMenuLink = {
@@ -26,7 +29,7 @@ type RightLinkGroup = LinkGroup
 
 type MegaMenuProps = {
   linkGroups: LinkGroup[]
-  rightLinkGroup: RightLinkGroup
+  rightLinkGroup?: RightLinkGroup
 }
 
 type NavLink = {
@@ -56,7 +59,13 @@ export const Navbar8Client = ({ logo, navLinks, buttons }: Navbar8ClientProps) =
     <section className="relative z-[999] flex min-h-16 w-full items-center border-b border-border bg-background px-[5%] md:min-h-18">
       <div className="mx-auto flex size-full max-w-full items-center justify-between">
         <a href={logo.url}>
-          <img src={logo.src || "/placeholder.svg"} alt={logo.alt} />
+          <img 
+            src={logo.src || "/placeholder.svg"} 
+            alt={logo.alt}
+            width={logo.width}
+            height={logo.height}
+            className={logo.className}
+          />
         </a>
 
         {/* Desktop Menu */}
@@ -191,18 +200,20 @@ const SubMenu = ({
                 </div>
               ))}
             </div>
-            <div className="relative mb-0 flex w-full max-w-[14rem] bg-secondary p-6 md:py-8 md:pl-8">
-              <div className="relative z-10 grid w-full auto-rows-max grid-cols-1 gap-4">
-                <div className="flex flex-col items-start">
-                  <h4 className="text-sm font-semibold leading-[1.3]">{megaMenu.rightLinkGroup.title}</h4>
+            {megaMenu.rightLinkGroup && megaMenu.rightLinkGroup.subMenuLinks && megaMenu.rightLinkGroup.subMenuLinks.length > 0 && (
+              <div className="relative mb-0 flex w-full max-w-[14rem] bg-secondary p-6 md:py-8 md:pl-8">
+                <div className="relative z-10 grid w-full auto-rows-max grid-cols-1 gap-4">
+                  <div className="flex flex-col items-start">
+                    <h4 className="text-sm font-semibold leading-[1.3]">{megaMenu.rightLinkGroup.title}</h4>
+                  </div>
+                  {megaMenu.rightLinkGroup.subMenuLinks.map((subMenuLink, index) => (
+                    <a key={index} href={subMenuLink.url} className="text-sm transition-colors hover:text-primary">
+                      {subMenuLink.title}
+                    </a>
+                  ))}
                 </div>
-                {megaMenu.rightLinkGroup.subMenuLinks.map((subMenuLink, index) => (
-                  <a key={index} href={subMenuLink.url} className="text-sm transition-colors hover:text-primary">
-                    {subMenuLink.title}
-                  </a>
-                ))}
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
@@ -263,14 +274,16 @@ const SubMenuMobile = ({
               ))}
             </div>
           ))}
-          <div className="mb-4 flex flex-col gap-4 border-t border-border pt-4">
-            <h4 className="text-sm font-semibold leading-[1.4]">{megaMenu.rightLinkGroup.title}</h4>
-            {megaMenu.rightLinkGroup.subMenuLinks.map((subMenuLink, index) => (
-              <a key={index} href={subMenuLink.url} className="text-sm">
-                {subMenuLink.title}
-              </a>
-            ))}
-          </div>
+          {megaMenu.rightLinkGroup && megaMenu.rightLinkGroup.subMenuLinks && megaMenu.rightLinkGroup.subMenuLinks.length > 0 && (
+            <div className="mb-4 flex flex-col gap-4 border-t border-border pt-4">
+              <h4 className="text-sm font-semibold leading-[1.4]">{megaMenu.rightLinkGroup.title}</h4>
+              {megaMenu.rightLinkGroup.subMenuLinks.map((subMenuLink, index) => (
+                <a key={index} href={subMenuLink.url} className="text-sm">
+                  {subMenuLink.title}
+                </a>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

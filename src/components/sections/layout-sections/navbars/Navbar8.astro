@@ -1,11 +1,36 @@
 ---
-import { Navbar8Client, Navbar8Defaults } from './Navbar8Client';
+import { Navbar8Client } from './Navbar8Client';
+import { config } from '../../../../config/config.js';
 
-const props = Astro.props;
+// Props personnalisables (facultatif)
+type Props = {
+  logo?: { url?: string; src: string; alt?: string; width?: string; height?: string; className?: string };
+  navLinks?: any[];
+  buttons?: any[];
+  useConfigData?: boolean;
+};
+
+const {
+  logo,
+  navLinks,
+  buttons,
+  useConfigData = true
+} = Astro.props as Props;
+
+// Construire les données de la navbar - directement depuis config.js
 const navbarProps = {
-  logo: props.logo || Navbar8Defaults.logo,
-  navLinks: props.navLinks || Navbar8Defaults.navLinks,
-  buttons: props.buttons || Navbar8Defaults.buttons,
+  logo: logo || (useConfigData ? {
+    url: "/",
+    src: config.branding?.logos?.base?.horizontal || "https://d22po4pjz3o32e.cloudfront.net/logo-image.svg",
+    alt: config.name || "Logo",
+    width: config.branding?.logos?.dimensions?.width,
+    height: config.branding?.logos?.dimensions?.height,
+    className: config.branding?.logos?.dimensions?.className
+  } : { url: "/", src: "https://d22po4pjz3o32e.cloudfront.net/logo-image.svg", alt: "Logo" }),
+
+  navLinks: navLinks || (useConfigData ? config.navigation : []),
+  
+  buttons: buttons || (useConfigData ? config.cta : [])
 };
 ---
 

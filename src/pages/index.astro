@@ -2,144 +2,8 @@
 import Navbar8 from '../components/sections/layout-sections/navbars/Navbar8.astro';
 import '../config/global.css';
 
-const navbarProps = {
-  logo: {
-    url: "/",
-    src: "https://d22po4pjz3o32e.cloudfront.net/logo-image.svg",
-    alt: "Logo",
-  },
-  navLinks: [
-    { title: "Accueil", url: "/" },
-    { title: "À propos", url: "/about" },
-    { title: "Services", url: "/services" },
-    {
-      title: "Solutions",
-      url: "#",
-      megaMenu: {
-        linkGroups: [
-          {
-            title: "Développement",
-            subMenuLinks: [
-              {
-                url: "/dev/web",
-                image: {
-                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
-                  alt: "Web",
-                },
-                title: "Développement Web",
-                description: "Solutions web modernes et performantes",
-              },
-              {
-                url: "/dev/mobile",
-                image: {
-                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
-                  alt: "Mobile",
-                },
-                title: "Applications Mobile",
-                description: "Apps iOS et Android natives",
-              },
-              {
-                url: "/dev/api",
-                image: {
-                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
-                  alt: "API",
-                },
-                title: "API & Backend",
-                description: "Architecture backend robuste",
-              },
-            ],
-          },
-          {
-            title: "Design",
-            subMenuLinks: [
-              {
-                url: "/design/ui",
-                image: {
-                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
-                  alt: "UI",
-                },
-                title: "UI Design",
-                description: "Interfaces utilisateur élégantes",
-              },
-              {
-                url: "/design/ux",
-                image: {
-                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
-                  alt: "UX",
-                },
-                title: "UX Research",
-                description: "Expérience utilisateur optimale",
-              },
-              {
-                url: "/design/branding",
-                image: {
-                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
-                  alt: "Brand",
-                },
-                title: "Branding",
-                description: "Identité visuelle unique",
-              },
-            ],
-          },
-          {
-            title: "Marketing",
-            subMenuLinks: [
-              {
-                url: "/marketing/seo",
-                image: {
-                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
-                  alt: "SEO",
-                },
-                title: "SEO",
-                description: "Optimisation pour moteurs de recherche",
-              },
-              {
-                url: "/marketing/content",
-                image: {
-                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
-                  alt: "Content",
-                },
-                title: "Content Marketing",
-                description: "Stratégie de contenu efficace",
-              },
-              {
-                url: "/marketing/social",
-                image: {
-                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
-                  alt: "Social",
-                },
-                title: "Social Media",
-                description: "Gestion des réseaux sociaux",
-              },
-            ],
-          },
-        ],
-        rightLinkGroup: {
-          title: "Ressources",
-          subMenuLinks: [
-            { url: "/blog", title: "Blog" },
-            { url: "/docs", title: "Documentation" },
-            { url: "/support", title: "Support" },
-            { url: "/faq", title: "FAQ" },
-            { url: "/contact", title: "Contact" },
-          ],
-        },
-      },
-    },
-  ],
-  buttons: [
-    {
-      title: "Connexion",
-      variant: "secondary",
-      size: "sm",
-    },
-    {
-      title: "Commencer",
-      variant: "default",
-      size: "sm",
-    },
-  ],
-};
+// La navbar utilise automatiquement les données de config.js
+// Pas besoin de passer des props sauf si tu veux override
 ---
 
 <!DOCTYPE html>
@@ -150,7 +14,7 @@ const navbarProps = {
     <title>Navbar8 Demo - Astro</title>
   </head>
   <body class="min-h-screen bg-background text-foreground">
-    <Navbar8 {...navbarProps} />
+    <Navbar8 />
     
     <main class="container mx-auto px-4 py-16">
       <div class="max-w-4xl mx-auto">
