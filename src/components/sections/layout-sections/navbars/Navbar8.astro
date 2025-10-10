@@ -1,0 +1,12 @@
+---
+import { Navbar8Client, Navbar8Defaults } from './Navbar8Client';
+
+const props = Astro.props;
+const navbarProps = {
+  logo: props.logo || Navbar8Defaults.logo,
+  navLinks: props.navLinks || Navbar8Defaults.navLinks,
+  buttons: props.buttons || Navbar8Defaults.buttons,
+};
+---
+
+<Navbar8Client client:load {...navbarProps} />

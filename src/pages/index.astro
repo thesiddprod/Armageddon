@@ -1,17 +1,232 @@
 ---
-import "../config/global.css";
-import Demo from "../components/Demo";
+import Navbar8 from '../components/sections/layout-sections/navbars/Navbar8.astro';
+import '../config/global.css';
+
+const navbarProps = {
+  logo: {
+    url: "/",
+    src: "https://d22po4pjz3o32e.cloudfront.net/logo-image.svg",
+    alt: "Logo",
+  },
+  navLinks: [
+    { title: "Accueil", url: "/" },
+    { title: "À propos", url: "/about" },
+    { title: "Services", url: "/services" },
+    {
+      title: "Solutions",
+      url: "#",
+      megaMenu: {
+        linkGroups: [
+          {
+            title: "Développement",
+            subMenuLinks: [
+              {
+                url: "/dev/web",
+                image: {
+                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
+                  alt: "Web",
+                },
+                title: "Développement Web",
+                description: "Solutions web modernes et performantes",
+              },
+              {
+                url: "/dev/mobile",
+                image: {
+                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
+                  alt: "Mobile",
+                },
+                title: "Applications Mobile",
+                description: "Apps iOS et Android natives",
+              },
+              {
+                url: "/dev/api",
+                image: {
+                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
+                  alt: "API",
+                },
+                title: "API & Backend",
+                description: "Architecture backend robuste",
+              },
+            ],
+          },
+          {
+            title: "Design",
+            subMenuLinks: [
+              {
+                url: "/design/ui",
+                image: {
+                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
+                  alt: "UI",
+                },
+                title: "UI Design",
+                description: "Interfaces utilisateur élégantes",
+              },
+              {
+                url: "/design/ux",
+                image: {
+                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
+                  alt: "UX",
+                },
+                title: "UX Research",
+                description: "Expérience utilisateur optimale",
+              },
+              {
+                url: "/design/branding",
+                image: {
+                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
+                  alt: "Brand",
+                },
+                title: "Branding",
+                description: "Identité visuelle unique",
+              },
+            ],
+          },
+          {
+            title: "Marketing",
+            subMenuLinks: [
+              {
+                url: "/marketing/seo",
+                image: {
+                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
+                  alt: "SEO",
+                },
+                title: "SEO",
+                description: "Optimisation pour moteurs de recherche",
+              },
+              {
+                url: "/marketing/content",
+                image: {
+                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
+                  alt: "Content",
+                },
+                title: "Content Marketing",
+                description: "Stratégie de contenu efficace",
+              },
+              {
+                url: "/marketing/social",
+                image: {
+                  src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
+                  alt: "Social",
+                },
+                title: "Social Media",
+                description: "Gestion des réseaux sociaux",
+              },
+            ],
+          },
+        ],
+        rightLinkGroup: {
+          title: "Ressources",
+          subMenuLinks: [
+            { url: "/blog", title: "Blog" },
+            { url: "/docs", title: "Documentation" },
+            { url: "/support", title: "Support" },
+            { url: "/faq", title: "FAQ" },
+            { url: "/contact", title: "Contact" },
+          ],
+        },
+      },
+    },
+  ],
+  buttons: [
+    {
+      title: "Connexion",
+      variant: "secondary",
+      size: "sm",
+    },
+    {
+      title: "Commencer",
+      variant: "default",
+      size: "sm",
+    },
+  ],
+};
 ---
 
+<!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Démo Shadcn UI</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar8 Demo - Astro</title>
   </head>
   <body class="min-h-screen bg-background text-foreground">
-    <Demo client:load />
+    <Navbar8 {...navbarProps} />
+    
+    <main class="container mx-auto px-4 py-16">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl font-bold mb-6">Navbar8 Component Demo</h1>
+        <p class="text-lg text-muted-foreground mb-8">
+          Ceci est une page de démonstration pour le composant Navbar8. La navbar ci-dessus est entièrement fonctionnelle avec :
+        </p>
+        
+        <div class="grid gap-6 md:grid-cols-2 mb-12">
+          <div class="rounded-lg border border-border bg-card p-6">
+            <h2 class="text-xl font-semibold mb-3">Menu Desktop</h2>
+            <ul class="space-y-2 text-muted-foreground">
+              <li>✓ Navigation horizontale</li>
+              <li>✓ Mega menu avec dropdown</li>
+              <li>✓ Hover effects</li>
+              <li>✓ Boutons d'action</li>
+            </ul>
+          </div>
+          
+          <div class="rounded-lg border border-border bg-card p-6">
+            <h2 class="text-xl font-semibold mb-3">Menu Mobile</h2>
+            <ul class="space-y-2 text-muted-foreground">
+              <li>✓ Menu hamburger animé</li>
+              <li>✓ Navigation verticale</li>
+              <li>✓ Accordéons pour sous-menus</li>
+              <li>✓ Responsive design</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rounded-lg border border-border bg-secondary p-8">
+          <h2 class="text-2xl font-semibold mb-4">Technologies utilisées</h2>
+          <div class="grid gap-4 md:grid-cols-3">
+            <div>
+              <h3 class="font-semibold mb-2">Astro</h3>
+              <p class="text-sm text-muted-foreground">Framework principal pour le SSR</p>
+            </div>
+            <div>
+              <h3 class="font-semibold mb-2">React</h3>
+              <p class="text-sm text-muted-foreground">Pour l'interactivité client</p>
+            </div>
+            <div>
+              <h3 class="font-semibold mb-2">Tailwind CSS</h3>
+              <p class="text-sm text-muted-foreground">Styling avec design tokens</p>
+            </div>
+            <div>
+              <h3 class="font-semibold mb-2">Shadcn UI</h3>
+              <p class="text-sm text-muted-foreground">Composants Button</p>
+            </div>
+            <div>
+              <h3 class="font-semibold mb-2">Lucide React</h3>
+              <p class="text-sm text-muted-foreground">Icônes modernes</p>
+            </div>
+            <div>
+              <h3 class="font-semibold mb-2">CSS Transitions</h3>
+              <p class="text-sm text-muted-foreground">Animations fluides</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 p-6 rounded-lg bg-primary text-primary-foreground">
+          <h2 class="text-xl font-semibold mb-2">Comment utiliser</h2>
+          <p class="mb-4">Importez simplement le composant dans votre page Astro :</p>
+          <pre class="bg-black/20 p-4 rounded overflow-x-auto"><code>{`---
+import Navbar8 from '@/components/sections/layout-sections/navbars/Navbar8.astro';
+
+const navbarProps = {
+  logo: { url: "/", src: "/logo.svg", alt: "Logo" },
+  navLinks: [...],
+  buttons: [...]
+};
+---
+
+<Navbar8 {...navbarProps} />`}</code></pre>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
